@@ -24,3 +24,7 @@ end
 get "/exit" do
   exit 1
 end
+
+get "/env" do
+  json Hash[ENV.to_hash.sort]
+end
