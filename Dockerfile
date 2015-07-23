@@ -7,4 +7,4 @@ RUN cd /app && bundle install -j4 --deployment
 COPY . /app
 WORKDIR /app
 
-CMD ["bundle", "exec", "foreman", "start"]
+CMD ["foreman", "start"]
