@@ -36,3 +36,7 @@ end
 get "/env" do
   json Hash[ENV.to_hash.sort]
 end
+
+get "/fs" do
+  `ls -al`
+end
