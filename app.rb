@@ -33,6 +33,10 @@ get "/exit" do
   exit 1
 end
 
+get "/realexit" do
+  Process.kill "KILL", Process.pid
+end
+
 get "/env" do
   json Hash[ENV.to_hash.sort]
 end
