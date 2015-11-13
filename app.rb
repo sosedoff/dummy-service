@@ -21,7 +21,8 @@ get "/" do
   json(
     backend: backend_id,
     request_counter: $request_counter,
-    env: Hash[ENV.to_hash.sort_by { |k, _| k }]
+    env: Hash[ENV.to_hash.sort_by { |k, _| k }],
+    pid: Process.pid
   )
 end
 
