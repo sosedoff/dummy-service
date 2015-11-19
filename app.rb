@@ -60,3 +60,18 @@ end
 get "/fs" do
   `ls -al`
 end
+
+get "/write" do
+  path = params[:path].to_s
+  body = params[:body].to_s
+
+  if path.size > 0
+    File.open(path, "w") do |f|
+      f.write(body)
+    end
+
+    json(ok: true)
+  else
+    json(error: "need path")
+  end
+end
