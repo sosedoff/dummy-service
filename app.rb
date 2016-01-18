@@ -5,7 +5,7 @@ require "objspace"
 
 $request_counter = 0
 
-backend_id = SecureRandom.uuid
+backend_id = ENV["BACKEND"] || SecureRandom.uuid
 
 def json(data)
   JSON.dump(data)
@@ -26,6 +26,10 @@ get "/" do
     pid: Process.pid,
     time: Time.now.to_s
   )
+end
+
+get "/health" do
+  "OK"
 end
 
 get "/exception" do
