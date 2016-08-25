@@ -79,3 +79,7 @@ get "/write" do
     json(error: "need path")
   end
 end
+
+get "/ping" do
+  `ping -c 1 google.com`
+end
