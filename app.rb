@@ -4,6 +4,7 @@ require "securerandom"
 require "objspace"
 
 $request_counter = 0
+$hostname = `hostname`.strip
 
 backend_id = ENV["BACKEND"] || SecureRandom.uuid
 
@@ -20,6 +21,7 @@ end
 
 get "/" do
   json(
+    host: $hostname,
     backend: backend_id,
     request_counter: $request_counter,
     env: Hash[ENV.to_hash.sort_by { |k, _| k }],

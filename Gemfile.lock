@@ -12,6 +12,7 @@ GEM
       rack
     rack-protection (1.5.3)
       rack
+    rake (12.3.1)
     sinatra (1.4.6)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -29,8 +30,9 @@ PLATFORMS
 DEPENDENCIES
   foreman
   rack-heartbeat
+  rake
   sinatra
   thin
 
 BUNDLED WITH
-   1.10.6
+   1.16.2
