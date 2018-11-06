@@ -8,4 +8,4 @@ COPY . /app
 WORKDIR /app
 
 EXPOSE 5000
-CMD ["foreman", "start"]
+CMD ["bundle", "exec", "foreman", "start"]
