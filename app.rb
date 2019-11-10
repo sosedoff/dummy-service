@@ -26,7 +26,8 @@ get "/" do
     request_counter: $request_counter,
     env: Hash[ENV.to_hash.sort_by { |k, _| k }],
     pid: Process.pid,
-    time: Time.now.to_s
+    time: Time.now.to_s,
+    headers: request.env.select { |k,_| k.start_with?("HTTP_") }
   )
 end
 
