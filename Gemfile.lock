@@ -7,7 +7,7 @@ GEM
     foreman (0.76.0)
       dotenv (~> 1.0.2)
       thor (~> 0.19.1)
-    rack (1.6.11)
+    rack (1.6.12)
     rack-heartbeat (1.0.1)
       rack
     rack-protection (1.5.5)
